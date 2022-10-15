@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 
 const Context = createContext();
+import useDidMountEffect from "./Hooks/useDidMountEffect";
 
 function ContextProvider({ children }) {
   const [jobs, setJobs] = useState([]);
@@ -12,8 +13,16 @@ function ContextProvider({ children }) {
     }
   }, []);
 
-  console.log(jobs);
-  return <Context.Provider value={jobs}>{children}</Context.Provider>;
+  useDidMountEffect(() => {
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+  }, [jobs]);
+
+  const localJobs = JSON.parse(localStorage.getItem("jobs"));
+
+  console.log(localJobs);
+  return (
+    <Context.Provider value={{ jobs, localJobs }}>{children}</Context.Provider>
+  );
 }
 
 export { ContextProvider, Context };
