@@ -22,3 +22,15 @@ body {
   height: 35px;
   margin-right: 10px;
 }
+
+.job-type {
+  color: yellowgreen;
+}
+
+.tag {
+  color: brown;
+}
+
+.tags {
+  display: flex;
+}
