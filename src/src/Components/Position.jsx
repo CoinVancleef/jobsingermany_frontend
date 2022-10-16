@@ -19,7 +19,7 @@ export default function Position({
     <div className="position">
       <div>
         <img src={position} alt="position" />
-        <Link>
+        <Link to={`/jobs/position/${slug}`}>
           <h3>{title}</h3>
         </Link>
       </div>

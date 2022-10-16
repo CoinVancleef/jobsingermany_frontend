@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Main />} />
-        <Route path="/jobs/position/:id" element={<PositionDetails />} />
+        <Route path="/jobs/position/:slug" element={<PositionDetails />} />
       </Routes>
     </>
   );
