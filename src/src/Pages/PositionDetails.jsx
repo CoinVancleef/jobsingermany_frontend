@@ -11,13 +11,16 @@ export default function PositionDetails() {
   const jobTypes = position.job_types.map((job) => (
     <p className="job-type">{job}</p>
   ));
+  console.log(position);
   return (
     <div className="position-details">
       <h1>{position.title}</h1>
       <div className="tags">
         {jobTags} {jobTypes}
       </div>
-      <a href={position.url}>Apply</a>
+      <a className="apply" href={position.url[0]}>
+        Apply
+      </a>
       <div dangerouslySetInnerHTML={{ __html: description }}></div>
     </div>
   );

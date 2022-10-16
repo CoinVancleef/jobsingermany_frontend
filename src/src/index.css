@@ -124,7 +124,7 @@ header a {
   border-radius: 10px;
 }
 
-.position-details a {
+.apply {
   background-color: #007aff;
   padding: 0.5em 1.5em;
   border-radius: 5px;
@@ -133,6 +133,6 @@ header a {
   margin-top: 2rem;
 }
 
-.position-details a:hover {
+.apply:hover {
   background-color: #0052aa;
 }
