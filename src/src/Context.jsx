@@ -19,7 +19,6 @@ function ContextProvider({ children }) {
 
   const localJobs = JSON.parse(localStorage.getItem("jobs"));
 
-  console.log(localJobs);
   return (
     <Context.Provider value={{ jobs, localJobs }}>{children}</Context.Provider>
   );

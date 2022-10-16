@@ -90,6 +90,11 @@ header a {
   color: rgb(128, 128, 128);
 }
 
+.position a:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
 .job-type {
   background-color: #fff59d;
 }
@@ -109,4 +114,25 @@ header a {
   margin-right: 5px;
   font-size: 0.9rem;
   border-radius: 15px;
+}
+
+.position-details {
+  max-width: 850px;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.position-details a {
+  background-color: #007aff;
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  transition: 250ms;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.position-details a:hover {
+  background-color: #0052aa;
 }
