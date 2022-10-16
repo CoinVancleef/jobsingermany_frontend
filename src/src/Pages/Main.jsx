@@ -17,5 +17,9 @@ export default function Main() {
     );
   });
 
-  return <div>{allJobs}</div>;
+  return (
+    <main>
+      <div className="main-wrapper">{allJobs}</div>
+    </main>
+  );
 }

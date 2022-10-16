@@ -2,6 +2,7 @@ import React from "react";
 import company from "../assets/company.svg";
 import companyLocation from "../assets/location.svg";
 import position from "../assets/position.svg";
+import { Link } from "react-router-dom";
 
 export default function Position({
   title,
@@ -18,7 +19,9 @@ export default function Position({
     <div className="position">
       <div>
         <img src={position} alt="position" />
-        <h3>{title}</h3>
+        <Link>
+          <h3>{title}</h3>
+        </Link>
       </div>
       <div>
         <img src={company} alt="company" />
