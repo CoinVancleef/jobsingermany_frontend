@@ -3,6 +3,7 @@ import company from "../assets/company.svg";
 import companyLocation from "../assets/location.svg";
 import position from "../assets/position.svg";
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 export default function Position({
   title,
@@ -12,8 +13,16 @@ export default function Position({
   tags,
   job_types,
 }) {
-  const jobTags = tags.map((tag) => <p className="tag">{tag}</p>);
-  const jobTypes = job_types.map((job) => <p className="job-type">{job}</p>);
+  const jobTags = tags.map((tag) => (
+    <p key={nanoid()} className="tag">
+      {tag}
+    </p>
+  ));
+  const jobTypes = job_types.map((job) => (
+    <p key={nanoid()} className="job-type">
+      {job}
+    </p>
+  ));
 
   return (
     <div className="position">

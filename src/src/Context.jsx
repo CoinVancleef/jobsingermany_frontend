@@ -9,6 +9,7 @@ function ContextProvider({ children }) {
   const [jobsSearchResult, setJobsSearchResult] = useState([]);
   const [allTags, setAllTags] = useState([]);
   const [allJobTypes, setAllJobTypes] = useState([]);
+  const [selectedParams, setSelectedParams] = useState([]);
 
   useEffect(() => {
     for (let i = 1; i < 4; i++) {
@@ -59,8 +60,19 @@ function ContextProvider({ children }) {
     }
   }, []);
 
-  console.log(allTags);
-  console.log(allJobTypes);
+  const allParams = [...allJobTypes, ...allTags];
+
+  function selectParams(param) {
+    if (!allParams.find((el) => el === param)) {
+      setSelectedParams((prevParams) => [...prevParams, param]);
+    } else {
+      setSelectedParams((prevParams) =>
+        prevParams.filter((el) => el !== param)
+      );
+    }
+  }
+
+  console.log(selectedParams);
 
   return (
     <Context.Provider
@@ -72,6 +84,8 @@ function ContextProvider({ children }) {
         handleChangeJobs,
         allTags,
         allJobTypes,
+        selectedParams,
+        selectParams,
       }}
     >
       {children}

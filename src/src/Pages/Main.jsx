@@ -4,6 +4,7 @@ import { Context } from "../Context";
 import Search from "../Components/Search";
 import Tags from "../Components/Tags";
 import JobTypes from "../Components/JobTypes";
+import { nanoid } from "nanoid";
 
 export default function Main() {
   const { localJobs, jobs, jobsInputData, jobsSearchResult, handleChangeJobs } =
@@ -11,6 +12,7 @@ export default function Main() {
   const allJobs = localJobs.map((job) => {
     return (
       <Position
+        key={nanoid()}
         title={job.title}
         location={job.location}
         company_name={job.company_name}
@@ -24,6 +26,7 @@ export default function Main() {
   const searchedJobs = jobsSearchResult.map((job) => {
     return (
       <Position
+        key={nanoid()}
         title={job.title}
         location={job.location}
         company_name={job.company_name}

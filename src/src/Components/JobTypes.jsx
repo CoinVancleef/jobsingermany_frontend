@@ -3,6 +3,10 @@ import { Context } from "../Context";
 
 export default function JobTypes() {
   const { allJobTypes } = useContext(Context);
-  const types = allJobTypes.map((type) => <p className="job-type">{type}</p>);
+  const types = allJobTypes.map((type) => (
+    <p key={type} className="job-type">
+      {type}
+    </p>
+  ));
   return <div className="job-types-component">{types}</div>;
 }
