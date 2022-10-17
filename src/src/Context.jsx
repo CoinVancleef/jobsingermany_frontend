@@ -7,6 +7,8 @@ function ContextProvider({ children }) {
   const [jobs, setJobs] = useState([]);
   const [jobsInputData, setJobsInputData] = useState("");
   const [jobsSearchResult, setJobsSearchResult] = useState([]);
+  const [allTags, setAllTags] = useState([]);
+  const [allJobTypes, setAllJobTypes] = useState([]);
 
   useEffect(() => {
     for (let i = 1; i < 4; i++) {
@@ -43,6 +45,23 @@ function ContextProvider({ children }) {
     setJobsSearchResult(results);
   }, [jobsInputData]);
 
+  useEffect(() => {
+    if (localJobs) {
+      setAllTags([...new Set(localJobs.map((job) => job.tags).flat())]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (localJobs) {
+      setAllJobTypes([
+        ...new Set(localJobs.map((job) => job.job_types).flat()),
+      ]);
+    }
+  }, []);
+
+  console.log(allTags);
+  console.log(allJobTypes);
+
   return (
     <Context.Provider
       value={{
@@ -51,6 +70,8 @@ function ContextProvider({ children }) {
         jobsInputData,
         jobsSearchResult,
         handleChangeJobs,
+        allTags,
+        allJobTypes,
       }}
     >
       {children}

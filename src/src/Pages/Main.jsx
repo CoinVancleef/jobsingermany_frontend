@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import Position from "../Components/Position";
 import { Context } from "../Context";
 import Search from "../Components/Search";
+import Tags from "../Components/Tags";
+import JobTypes from "../Components/JobTypes";
 
 export default function Main() {
   const { localJobs, jobs, jobsInputData, jobsSearchResult, handleChangeJobs } =
@@ -39,6 +41,10 @@ export default function Main() {
         data={jobsInputData}
         handleChange={handleChangeJobs}
       />
+      <div className="tags-and-jobs">
+        <Tags />
+        <JobTypes />
+      </div>
       <div className="main-wrapper">
         {jobsSearchResult ? searchedJobs : allJobs}
       </div>

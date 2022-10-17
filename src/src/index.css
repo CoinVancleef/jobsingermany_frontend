@@ -151,3 +151,32 @@ header a {
   border-radius: 5px;
   border: 1px grey solid;
 }
+
+.tags-and-jobs {
+  display: flex;
+  flex-direction: row;
+  max-width: 1280px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.tags-component,
+.job-types-component {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags-component p,
+.job-types-component p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.job-type-added {
+  background-color: darkgoldenrod;
+}
+
+.tag-added {
+  background-color: rgba(255, 138, 138, 0.9);
+  color: rgb(95, 0, 0);
+}
