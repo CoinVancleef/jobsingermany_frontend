@@ -136,3 +136,18 @@ header a {
 .apply:hover {
   background-color: #0052aa;
 }
+
+.jobs-search {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.jobs-search input {
+  max-width: 800px;
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 0.25em 0.75em;
+  border-radius: 5px;
+  border: 1px grey solid;
+}

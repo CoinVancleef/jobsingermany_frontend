@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Form({ placeholder, data, handleChange }) {
   return (
-    <form>
+    <form className="jobs-search">
       <input
         type="text"
         placeholder={placeholder}
