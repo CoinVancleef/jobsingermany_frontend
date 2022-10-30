@@ -63,12 +63,10 @@ function ContextProvider({ children }) {
   const allParams = [...allJobTypes, ...allTags];
 
   function selectParams(param) {
-    if (!allParams.find((el) => el === param)) {
+    if (!selectedParams.find((el) => el === param)) {
       setSelectedParams((prevParams) => [...prevParams, param]);
     } else {
-      setSelectedParams((prevParams) =>
-        prevParams.filter((el) => el !== param)
-      );
+      setSelectedParams((prevParams) => prevParams.filter((el) => el != param));
     }
   }
 
