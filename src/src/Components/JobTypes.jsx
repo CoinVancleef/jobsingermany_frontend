@@ -1,10 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import { Context } from "../Context";
 
 export default function JobTypes() {
-  const { allJobTypes } = useContext(Context);
+  const { allJobTypes, selectParams, selectedParams } = useContext(Context);
+  const memoizedSearch = useCallback(
+    (tag) => {
+      if (selectedParams.find((el) => el === tag)) {
+        return "job-type-added";
+      } else {
+        return "job-type";
+      }
+    },
+    [selectedParams]
+  );
   const types = allJobTypes.map((type) => (
-    <p key={type} className="job-type">
+    <p
+      key={type}
+      onClick={() => {
+        selectParams(type);
+      }}
+      className={memoizedSearch(type)}
+    >
       {type}
     </p>
   ));
