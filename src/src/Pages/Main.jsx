@@ -7,8 +7,14 @@ import JobTypes from "../Components/JobTypes";
 import { nanoid } from "nanoid";
 
 export default function Main() {
-  const { localJobs, jobs, jobsInputData, jobsSearchResult, handleChangeJobs } =
-    useContext(Context);
+  const {
+    localJobs,
+    jobsInputData,
+    jobsSearchResult,
+    handleChangeJobs,
+    selectedParams,
+  } = useContext(Context);
+
   const allJobs = localJobs.map((job) => {
     return (
       <Position
@@ -37,6 +43,38 @@ export default function Main() {
     );
   });
 
+  const jobsByParams = localJobs.filter((job) => {
+    const tagsAndTypes = [...job.job_types, ...job.tags];
+    if (tagsAndTypes.length === 0) return false;
+    if (
+      selectedParams.every((param) => tagsAndTypes.some((el) => el === param))
+    ) {
+      return true;
+    }
+    return false;
+  });
+
+  const everyJob = () => {
+    if (selectedParams.length > 0)
+      return jobsByParams.map((job) => {
+        return (
+          <Position
+            key={nanoid()}
+            title={job.title}
+            location={job.location}
+            company_name={job.company_name}
+            slug={job.slug}
+            tags={job.tags}
+            job_types={job.job_types}
+          />
+        );
+      });
+    if (jobsSearchResult) return searchedJobs;
+    else return allJobs;
+  };
+
+  console.log(selectedParams);
+
   return (
     <main>
       <Search
@@ -48,9 +86,7 @@ export default function Main() {
         <Tags />
         <JobTypes />
       </div>
-      <div className="main-wrapper">
-        {jobsSearchResult ? searchedJobs : allJobs}
-      </div>
+      <div className="main-wrapper">{everyJob()}</div>
     </main>
   );
 }
