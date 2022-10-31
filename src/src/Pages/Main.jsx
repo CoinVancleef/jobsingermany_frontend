@@ -73,15 +73,15 @@ export default function Main() {
     else return allJobs;
   };
 
-  console.log(selectedParams);
-
   return (
     <main>
-      <Search
-        placeholder="Search by position, tags, location, etc"
-        data={jobsInputData}
-        handleChange={handleChangeJobs}
-      />
+      <div className="search-main">
+        <Search
+          placeholder="Search by position, tags, location, etc"
+          data={jobsInputData}
+          handleChange={handleChangeJobs}
+        />
+      </div>
       <div className="tags-and-jobs">
         <Tags />
         <JobTypes />

@@ -155,6 +155,7 @@ header a {
   padding: 0.25em 0.75em;
   border-radius: 5px;
   border: 1px grey solid;
+  display: inline-block;
 }
 
 .tags-and-jobs {
@@ -195,4 +196,14 @@ header a {
 .tag:hover,
 .job-type:hover {
   cursor: pointer;
+}
+
+.search-main {
+  /* display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr; */
+}
+
+.filters-button {
+  display: inline-block;
 }
