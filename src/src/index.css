@@ -212,3 +212,9 @@ header a {
   box-shadow: inset 0 0 5px #4c4c4c;
   border: 1px solid gray;
 }
+
+.checkboxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

@@ -11,8 +11,8 @@ export default function Form({ placeholder, data, handleChange }) {
   }
 
   const buttonStyle = isFilterClicked
-    ? "filters-button"
-    : "filters-button-clicked";
+    ? "filters-button-clicked"
+    : "filters-button";
 
   return (
     <form className="jobs-search">

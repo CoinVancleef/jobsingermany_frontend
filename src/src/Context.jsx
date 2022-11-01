@@ -11,6 +11,9 @@ function ContextProvider({ children }) {
   const [allJobTypes, setAllJobTypes] = useState([]);
   const [selectedParams, setSelectedParams] = useState([]);
   const [isFilterClicked, setIsFilterClicked] = useState(false);
+  const [showTags, setShowTags] = useState(false);
+  const [showJobTypes, setShowJobTypes] = useState(false);
+  const [showRemoteOnly, setShowRemoteOnly] = useState(false);
 
   useEffect(() => {
     for (let i = 1; i < 4; i++) {
@@ -85,6 +88,12 @@ function ContextProvider({ children }) {
         selectParams,
         isFilterClicked,
         setIsFilterClicked,
+        showTags,
+        showJobTypes,
+        showRemoteOnly,
+        setShowTags,
+        setShowJobTypes,
+        setShowRemoteOnly,
       }}
     >
       {children}
