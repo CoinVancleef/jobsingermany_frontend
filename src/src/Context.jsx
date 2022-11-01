@@ -10,6 +10,7 @@ function ContextProvider({ children }) {
   const [allTags, setAllTags] = useState([]);
   const [allJobTypes, setAllJobTypes] = useState([]);
   const [selectedParams, setSelectedParams] = useState([]);
+  const [isFilterClicked, setIsFilterClicked] = useState(false);
 
   useEffect(() => {
     for (let i = 1; i < 4; i++) {
@@ -70,8 +71,6 @@ function ContextProvider({ children }) {
     }
   }
 
-  console.log(selectedParams);
-
   return (
     <Context.Provider
       value={{
@@ -84,6 +83,8 @@ function ContextProvider({ children }) {
         allJobTypes,
         selectedParams,
         selectParams,
+        isFilterClicked,
+        setIsFilterClicked,
       }}
     >
       {children}

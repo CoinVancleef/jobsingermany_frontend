@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import filter from "../assets/filter_icon.svg";
+import { Context } from "../Context";
 
 export default function Form({ placeholder, data, handleChange }) {
+  const { isFilterClicked, setIsFilterClicked } = useContext(Context);
+
   function handleDefault(e) {
     e.preventDefault();
+    setIsFilterClicked((prevState) => !prevState);
   }
+
+  const buttonStyle = isFilterClicked
+    ? "filters-button"
+    : "filters-button-clicked";
 
   return (
     <form className="jobs-search">
@@ -14,7 +22,7 @@ export default function Form({ placeholder, data, handleChange }) {
         onChange={handleChange}
         value={data}
       />
-      <button onClick={handleDefault} className="filters-button">
+      <button onClick={handleDefault} className={buttonStyle}>
         <img src={filter}></img>
       </button>
     </form>
