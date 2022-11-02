@@ -109,6 +109,7 @@ header a {
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .job-type,
@@ -124,7 +125,7 @@ header a {
 .position-details {
   max-width: 850px;
   margin: 2rem auto;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 2em;
   border-radius: 10px;
 }
@@ -217,4 +218,22 @@ header a {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+}
+
+.similar-positions {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.position-details .position {
+  margin-top: 0;
+  background-color: #f8f8f8;
+}
+
+.header-apply {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }

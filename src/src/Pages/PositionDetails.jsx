@@ -57,14 +57,17 @@ export default function PositionDetails() {
   }
   return (
     <div className="position-details">
-      <h1>{position.title}</h1>
+      <div className="header-apply">
+        <h1>{position.title}</h1>
+        <a className="apply" href={position.url[0]}>
+          Apply
+        </a>
+      </div>
       <div className="tags">
         {jobTags} {jobTypes}
       </div>
-      <a className="apply" href={position.url[0]}>
-        Apply
-      </a>
       <div dangerouslySetInnerHTML={{ __html: description }}></div>
+      <h2 className="similar-positions">Similar Positions</h2>
       {lessRelevant.length > 0 && similarPositions()}
     </div>
   );
