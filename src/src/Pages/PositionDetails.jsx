@@ -67,8 +67,13 @@ export default function PositionDetails() {
         {jobTags} {jobTypes}
       </div>
       <div dangerouslySetInnerHTML={{ __html: description }}></div>
-      <h2 className="similar-positions">Similar Positions</h2>
-      {lessRelevant.length > 0 && similarPositions()}
+
+      {lessRelevant.length > 0 && (
+        <>
+          <h2 className="similar-positions">Similar Positions</h2>
+          {similarPositions()}
+        </>
+      )}
     </div>
   );
 }
