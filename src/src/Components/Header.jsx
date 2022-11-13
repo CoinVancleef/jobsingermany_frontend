@@ -21,7 +21,7 @@ export default function Header() {
             Log In
           </button>
           <Popup setter={setIsTriggerLogIn} trigger={isTriggerLogIn}>
-            <LogInForm />
+            <LogInForm setIsTriggerSignUp setIsTriggerLogIn />
           </Popup>
           <button
             onClick={() => setIsTriggerSignUp(true)}

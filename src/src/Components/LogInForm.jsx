@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function LogInForm() {
+export default function LogInForm(props) {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (event) => {
@@ -19,7 +19,10 @@ export default function LogInForm() {
           <input type="password" name="pass" required />{" "}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" value="Log In" />
+          <p onClick={() => alert(hello)}>
+            Don't have an account? <span>Sign Up</span>
+          </p>
         </div>
       </form>
     </div>

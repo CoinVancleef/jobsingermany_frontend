@@ -22,8 +22,8 @@ export default function SignUpForm() {
           <label>Password</label>
           <input type="password" name="pass" required />{" "}
         </div>
-        <div className="button-container">
-          <input type="submit" />
+        <div className="button-container-sign-up">
+          <input type="submit" value="Sign Up" />
         </div>
       </form>
     </div>

@@ -275,6 +275,12 @@ header a {
 .button-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+.button-container-sign-up {
+  display: flex;
+  justify-content: center;
 }
 
 .login-form {
@@ -313,11 +319,6 @@ header a {
 
 .inner-popup {
   position: relative;
-  /* padding: 2em; */
-  /* width: 100%; */
-  /* height: 60px; */
-  /* max-width: 300px;
-  background-color: #fff; */
 }
 
 .close-btn {
